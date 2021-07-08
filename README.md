@@ -14,7 +14,8 @@ Details of what methods and hyperparameters to use for the
 experiments can be changed by editing the experiments configuration
 files within the "experiment_setups" directory (this includes for
 example the option of running experiments in parallel using multiple
-processes.) In addition, you can change which estimation/inference
+processes, by changing the value of "num_procs".)
+In addition, you can change which estimation/inference
 experiments to run by editing the value of "setup_list" at the top
 of the respective "run_experiments_TYPE.py" script, where again
 TYPE is "parametric" or "inference".
@@ -30,3 +31,6 @@ results files contain 3 keys:
     could be created without re-running experiments)
 - "setup": a summary of the setup configuration used for
     the corresponding experiment
+
+Experiments were run using Python 3.8.5. Versions of libraries used
+are summarized in the included "requirements.txt" file.
