@@ -1,5 +1,6 @@
 # VMM
-Code for reproducing experiments for paper "The Variational Method of Moments".
+Code for reproducing experiments for paper "The Variational Method of Moments"
+(https://arxiv.org/abs/2012.09422).
 
 Estimation or experiments can be run by executing 
 "run_experiments_TYPE.py", where TYPE is "estimation" or "inference"
@@ -23,12 +24,12 @@ upon experiment completion, in the respective save directory. The
 results files contain 3 keys:
 - "aggregate_results": contains aggregate statistics from the
     experiments, including all numbers presented in the results tables
-    within the paper and supplement
+    within the paper and supplement.
 - "results": contains detailed individual results for each experiment
     replication (from which different aggregate statistics or plots
-    could be created without re-running experiments)
+    could be created without re-running experiments.)
 - "setup": a summary of the setup configuration used for
-    the corresponding experiment
+    the corresponding experiment.
 
 Experiments were run using Python 3.8.5. Versions of libraries used
 are summarized in the included "requirements.txt" file.
