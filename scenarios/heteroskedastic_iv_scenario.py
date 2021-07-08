@@ -5,9 +5,9 @@ import torch.nn as nn
 import numpy as np
 from scipy.special import expit
 
-from parametric_scenarios.abstract_parametric_scenario import \
+from scenarios.abstract_parametric_scenario import \
     AbstractParametricScenario
-from parametric_scenarios.abstract_rho import AbstractRho
+from scenarios.abstract_rho import AbstractRho
 from utils.np_utils import np_softplus
 from utils.torch_utils import torch_softplus, torch_to_np, torch_to_float
 

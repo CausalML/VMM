@@ -2,22 +2,22 @@ import torch
 
 from utils.oadam import OAdam
 from utils.models import ModularMLPModel
-from parametric_methods.double_neural_vmm import DoubleNeuralVMM
-from parametric_methods.kernel_mmr import KernelMMR
-from parametric_methods.non_causal_baseline import NonCausalBaseline
-from parametric_methods.sieve_minimum_distance import SMDIdentity, \
+from estimation_methods.double_neural_vmm import DoubleNeuralVMM
+from estimation_methods.kernel_mmr import KernelMMR
+from estimation_methods.non_causal_baseline import NonCausalBaseline
+from estimation_methods.sieve_minimum_distance import SMDIdentity, \
     SMDHomoskedastic, SMDHeteroskedastic
-from parametric_methods.single_kernel_vmm import SingleKernelVMM
-from parametric_scenarios.heteroskedastic_iv_scenario import \
+from estimation_methods.single_kernel_vmm import SingleKernelVMM
+from scenarios.heteroskedastic_iv_scenario import \
     HeteroskedasticIVScenario
-from parametric_scenarios.policy_learning_scenario import PolicyLearningScenario
-from parametric_scenarios.simple_iv_scenario import SimpleIVScenario
+from scenarios.policy_learning_scenario import PolicyLearningScenario
+from scenarios.simple_iv_scenario import SimpleIVScenario
 from utils.hyperparameter_optimization import GlobalSetupVal, \
     HyperparameterPlaceholder
 from utils.kernels import TripleMedianKernel
 from utils.sieve_basis import MultiOutputPolynomialSplineBasis
 
-parametric_experiment_methods = [
+estimation_experiment_methods = [
     {
         "class": NonCausalBaseline,
         "name": "NonCausalBaseline",
@@ -152,7 +152,7 @@ simple_iv_setup = {
     "dev_z_kernel_args": dev_z_kernel_args,
     "num_reps": num_reps,
     "num_procs": num_procs,
-    "methods": parametric_experiment_methods,
+    "methods": estimation_experiment_methods,
 }
 
 heteroskedastic_iv_setup = {
@@ -168,7 +168,7 @@ heteroskedastic_iv_setup = {
     "dev_z_kernel_args": dev_z_kernel_args,
     "num_reps": num_reps,
     "num_procs": num_procs,
-    "methods": parametric_experiment_methods,
+    "methods": estimation_experiment_methods,
 }
 
 policy_learning_setup = {
@@ -184,5 +184,5 @@ policy_learning_setup = {
     "dev_z_kernel_args": dev_z_kernel_args,
     "num_reps": num_reps,
     "num_procs": num_procs,
-    "methods": parametric_experiment_methods,
+    "methods": estimation_experiment_methods,
 }

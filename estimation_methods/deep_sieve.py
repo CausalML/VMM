@@ -1,19 +1,19 @@
 import numpy as np
 import torch
 
-from parametric_methods.abstract_parametric_method import \
-    AbstractParametricMethod
+from estimation_methods.abstract_estimation_method import \
+    AbstractEstimationMethod
 from utils.torch_utils import torch_to_np, BatchIter, np_to_tensor
 
 
-class DeepSieve(AbstractParametricMethod):
+class DeepSieve(AbstractEstimationMethod):
     # Implements SMD algorithm using LBFGS optimizer and identity omega
     def __init__(self, rho_generator, rho_dim, gamma, k_z_class, k_z_args,
                  f_network_class, f_network_args, optim_class, optim_args,
                  batch_size, max_num_epochs, eval_freq, max_no_improve=5,
                  burn_in_epochs=100, pretrain=True, cuda=False, device=None,
                  verbose=False):
-        AbstractParametricMethod.__init__(self, rho_generator, rho_dim)
+        AbstractEstimationMethod.__init__(self, rho_generator, rho_dim)
 
         self.gamma = gamma
         if isinstance(k_z_class, list):

@@ -2,15 +2,15 @@ import numpy as np
 import scipy.linalg
 import torch
 
-from parametric_methods.abstract_parametric_method import \
-    AbstractParametricMethod
+from estimation_methods.abstract_estimation_method import \
+    AbstractEstimationMethod
 from utils.torch_utils import np_to_tensor
 
 
-class SingleKernelVMM(AbstractParametricMethod):
+class SingleKernelVMM(AbstractEstimationMethod):
     def __init__(self, rho_generator, rho_dim, alpha, k_z_class, k_z_args,
                  num_iter, cuda=False, device=None, verbose=False):
-        AbstractParametricMethod.__init__(self, rho_generator, rho_dim)
+        AbstractEstimationMethod.__init__(self, rho_generator, rho_dim)
         self.alpha = alpha
         if isinstance(k_z_class, list):
             self.k_z_list = [c_(**a_) for c_, a_ in zip(k_z_class, k_z_args)]

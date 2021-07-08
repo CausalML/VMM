@@ -4,19 +4,19 @@ import time
 import numpy as np
 import torch
 
-from parametric_methods.abstract_parametric_method import \
-    AbstractParametricMethod
+from estimation_methods.abstract_estimation_method import \
+    AbstractEstimationMethod
 from utils.torch_utils import np_to_tensor, BatchIter
 
 
-class DoubleNeuralVMM(AbstractParametricMethod):
+class DoubleNeuralVMM(AbstractEstimationMethod):
     def __init__(self, rho_generator, rho_dim, kernel_lambda, l2_lambda,
                  k_z_class, k_z_args, rho_optim_class, rho_optim_args,
                  f_network_class, f_network_args, f_optim_class, f_optim_args,
                  batch_size, max_num_epochs, eval_freq, max_no_improve=5,
                  burn_in_cycles=5, pretrain=True, cuda=False, device=None,
                  verbose=False):
-        AbstractParametricMethod.__init__(self, rho_generator, rho_dim)
+        AbstractEstimationMethod.__init__(self, rho_generator, rho_dim)
         self.kernel_lambda = kernel_lambda
         self.l2_lambda = l2_lambda
         if isinstance(k_z_class, list):

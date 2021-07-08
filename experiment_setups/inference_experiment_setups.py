@@ -4,11 +4,11 @@ from inference_methods.kernel_inference import KernelInferenceMethod
 from inference_methods.neural_inference import NeuralInferenceMethod
 from utils.oadam import OAdam
 from utils.models import ModularMLPModel
-from parametric_methods.double_neural_vmm import DoubleNeuralVMM
-from parametric_methods.single_kernel_vmm import SingleKernelVMM
-from parametric_scenarios.heteroskedastic_iv_scenario import \
+from estimation_methods.double_neural_vmm import DoubleNeuralVMM
+from estimation_methods.single_kernel_vmm import SingleKernelVMM
+from scenarios.heteroskedastic_iv_scenario import \
     HeteroskedasticIVScenario
-from parametric_scenarios.simple_iv_scenario import SimpleIVScenario
+from scenarios.simple_iv_scenario import SimpleIVScenario
 from utils.hyperparameter_optimization import GlobalSetupVal, \
     HyperparameterPlaceholder
 from utils.kernels import TripleMedianKernel

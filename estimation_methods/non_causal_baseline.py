@@ -1,13 +1,13 @@
 import torch
 
-from parametric_methods.abstract_parametric_method import AbstractParametricMethod
+from estimation_methods.abstract_estimation_method import AbstractEstimationMethod
 from utils.torch_utils import np_to_tensor
 
 
-class NonCausalBaseline(AbstractParametricMethod):
+class NonCausalBaseline(AbstractEstimationMethod):
     def __init__(self, rho_generator, rho_dim, cuda=False, device=None,
                  verbose=False):
-        AbstractParametricMethod.__init__(self, rho_generator, rho_dim)
+        AbstractEstimationMethod.__init__(self, rho_generator, rho_dim)
         self.cuda = cuda
         self.device = device
         self.verbose = verbose

@@ -1,15 +1,15 @@
 import torch
 import numpy as np
 
-from parametric_methods.abstract_parametric_method import \
-    AbstractParametricMethod
+from estimation_methods.abstract_estimation_method import \
+    AbstractEstimationMethod
 from utils.torch_utils import np_to_tensor
 
 
-class KernelMMR(AbstractParametricMethod):
+class KernelMMR(AbstractEstimationMethod):
     def __init__(self, rho_generator, rho_dim, k_z_class, k_z_args, cuda=False,
                  device=None, verbose=False):
-        AbstractParametricMethod.__init__(self, rho_generator, rho_dim)
+        AbstractEstimationMethod.__init__(self, rho_generator, rho_dim)
         if isinstance(k_z_class, list):
             self.k_z_list = [c_(**a_) for c_, a_ in zip(k_z_class, k_z_args)]
         else:

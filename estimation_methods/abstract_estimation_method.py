@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class AbstractParametricMethod(object):
+class AbstractEstimationMethod(object):
     def __init__(self, rho_generator, rho_dim):
         self.rho_generator = rho_generator
         self.rho = rho_generator()

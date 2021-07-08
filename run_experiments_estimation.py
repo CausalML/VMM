@@ -5,14 +5,14 @@ from multiprocessing import Queue, Process
 
 import numpy as np
 
-from experiment_setups.parametric_experiment_setups import simple_iv_setup, \
+from experiment_setups.estimation_experiment_setups import simple_iv_setup, \
     heteroskedastic_iv_setup, policy_learning_setup
 from utils.hyperparameter_optimization import iterate_placeholder_values, \
     fill_placeholders, fill_global_values
 
 
 setup_list = [simple_iv_setup, heteroskedastic_iv_setup, policy_learning_setup]
-save_dir = "results_parametric"
+save_dir = "results_estimation"
 
 
 def main():

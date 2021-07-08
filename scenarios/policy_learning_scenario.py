@@ -6,9 +6,9 @@ import torch.nn as nn
 import numpy as np
 from scipy.special import expit
 
-from parametric_scenarios.abstract_parametric_scenario import \
+from scenarios.abstract_parametric_scenario import \
     AbstractParametricScenario
-from parametric_scenarios.abstract_rho import AbstractRho
+from scenarios.abstract_rho import AbstractRho
 from utils.np_utils import np_softplus
 from utils.torch_utils import torch_to_np, np_to_tensor
 from utils.train_network_flexible import train_network_flexible

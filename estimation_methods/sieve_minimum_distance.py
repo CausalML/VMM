@@ -4,17 +4,17 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from parametric_methods.abstract_parametric_method import \
-    AbstractParametricMethod
+from estimation_methods.abstract_estimation_method import \
+    AbstractEstimationMethod
 from utils.torch_utils import np_to_tensor, torch_to_np, torch_softplus
 from utils.train_network_flexible import train_network_flexible
 
 
-class SMDIdentity(AbstractParametricMethod):
+class SMDIdentity(AbstractEstimationMethod):
     # Implements SMD algorithm using LBFGS optimizer and identity omega
     def __init__(self, rho_generator, rho_dim, basis_class, basis_args,
                  cuda=False, device=None):
-        AbstractParametricMethod.__init__(self, rho_generator, rho_dim)
+        AbstractEstimationMethod.__init__(self, rho_generator, rho_dim)
         self.basis = basis_class(**basis_args)
         self.rho_dim = rho_dim
         self.cuda = cuda
